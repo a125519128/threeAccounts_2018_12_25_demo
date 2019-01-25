@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* 全局样式初始化 */
+*{box-sizing: border-box;}
+html,.container {width: 100%;height: 100%;}
+html,body,a,button,input,optgroup,select,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+*,body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input,.container{margin:0;padding: 0;}
+body {width:100%;min-height:100%;font: 12px/1.8em -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;color:#333;overflow-x: hidden;-webkit-overflow-scrolling: touch;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;background: #f8f8f8;}
+ul,ol,li{list-style:none;}
+img{border:none;}
+i{font-style:normal;}
+a{text-decoration:none;}
+a,img {-webkit-touch-callout:none;}
+input,textarea {outline: none;border:0;}
+input {-webkit-appearance: none;line-height: 100% !important;}
+input{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;outline:none;}
+/* 改变 input 的颜色*/
+/*input::-webkit-input-placeholder{color:#999;}
+input:focus::-webkit-input-placeholder{color:#666;}*/
+/* 谷歌浏览器对于/deep/貌似不太友好，控制台提示/deep/将要被移除 */
+@deep: ~'>>>';
+/* 公用style */
+.fl{float: left;}
+.fr{float: right;}
+.clear{clear:both;}
+.clear:after{clear:both;display:table;content:'';}
+
+.bank-icon {background: url(../../static/images/bankIcon/123456.png) no-repeat center;background-size: 100%;}
+.bankIcon102100099996 {background: url(../../static/images/bankIcon/102100099996.png) no-repeat center;background-size: 100%;}
+.bankIcon103100000026 {background: url(../../static/images/bankIcon/103100000026.png) no-repeat center;background-size: 100%;}
+.bankIcon104100000004 {background: url(../../static/images/bankIcon/104100000004.png) no-repeat center;background-size: 100%;}
+.bankIcon105100000017 {background: url(../../static/images/bankIcon/105100000017.png) no-repeat center;background-size: 100%;}
+.bankIcon301290000007 {background: url(../../static/images/bankIcon/301290000007.png) no-repeat center;background-size: 100%;}
+.bankIcon302100011000 {background: url(../../static/images/bankIcon/302100011000.png) no-repeat center;background-size: 100%;}
+.bankIcon303100000006 {background: url(../../static/images/bankIcon/303100000006.png) no-repeat center;background-size: 100%;}
+.bankIcon304100040000 {background: url(../../static/images/bankIcon/304100040000.png) no-repeat center;background-size: 100%;}
+.bankIcon305100000006 {background: url(../../static/images/bankIcon/305100000006.png) no-repeat center;background-size: 100%;}
+.bankIcon305100000013 {background: url(../../static/images/bankIcon/305100000013.png) no-repeat center;background-size: 100%;}
+.bankIcon306581000003 {background: url(../../static/images/bankIcon/306581000003.png) no-repeat center;background-size: 100%;}
+.bankIcon307584007998 {background: url(../../static/images/bankIcon/307584007998.png) no-repeat center;background-size: 100%;}
+.bankIcon308584000013 {background: url(../../static/images/bankIcon/308584000013.png) no-repeat center;background-size: 100%;}
+.bankIcon309391000011 {background: url(../../static/images/bankIcon/309391000011.png) no-repeat center;background-size: 100%;}
+.bankIcon310290000013 {background: url(../../static/images/bankIcon/310290000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313100000013 {background: url(../../static/images/bankIcon/313100000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313110000017 {background: url(../../static/images/bankIcon/313110000017.png) no-repeat center;background-size: 100%;}
+.bankIcon313121006888 {background: url(../../static/images/bankIcon/313121006888.png) no-repeat center;background-size: 100%;}
+.bankIcon313191000011 {background: url(../../static/images/bankIcon/313191000011.png) no-repeat center;background-size: 100%;}
+.bankIcon313192000013 {background: url(../../static/images/bankIcon/313192000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313241066661 {background: url(../../static/images/bankIcon/313241066661.png) no-repeat center;background-size: 100%;}
+.bankIcon313261000018 {background: url(../../static/images/bankIcon/313261000018.png) no-repeat center;background-size: 100%;}
+.bankIcon313301008887 {background: url(../../static/images/bankIcon/313301008887.png) no-repeat center;background-size: 100%;}
+.bankIcon313301099999 {background: url(../../static/images/bankIcon/313301099999.png) no-repeat center;background-size: 100%;}
+.bankIcon313305066661 {background: url(../../static/images/bankIcon/313305066661.png) no-repeat center;background-size: 100%;}
+.bankIcon313331000014 {background: url(../../static/images/bankIcon/313331000014.png) no-repeat center;background-size: 100%;}
+.bankIcon313332082914 {background: url(../../static/images/bankIcon/313332082914.png) no-repeat center;background-size: 100%;}
+.bankIcon313393080005 {background: url(../../static/images/bankIcon/313393080005.png) no-repeat center;background-size: 100%;}
+.bankIcon313421087506 {background: url(../../static/images/bankIcon/313421087506.png) no-repeat center;background-size: 100%;}
+.bankIcon313424076706 {background: url(../../static/images/bankIcon/313424076706.png) no-repeat center;background-size: 100%;}
+.bankIcon313521000011 {background: url(../../static/images/bankIcon/313521000011.png) no-repeat center;background-size: 100%;}
+.bankIcon313521006000 {background: url(../../static/images/bankIcon/313521006000.png) no-repeat center;background-size: 100%;}
+.bankIcon313551070008 {background: url(../../static/images/bankIcon/313551070008.png) no-repeat center;background-size: 100%;}
+.bankIcon313551088886 {background: url(../../static/images/bankIcon/313551088886.png) no-repeat center;background-size: 100%;}
+.bankIcon313581003284 {background: url(../../static/images/bankIcon/313581003284.png) no-repeat center;background-size: 100%;}
+.bankIcon313591001001 {background: url(../../static/images/bankIcon/313591001001.png) no-repeat center;background-size: 100%;}
+.bankIcon313602088017 {background: url(../../static/images/bankIcon/313602088017.png) no-repeat center;background-size: 100%;}
+.bankIcon313651099999 {background: url(../../static/images/bankIcon/313651099999.png) no-repeat center;background-size: 100%;}
+.bankIcon313653000013 {background: url(../../static/images/bankIcon/313653000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313701098010 {background: url(../../static/images/bankIcon/313701098010.png) no-repeat center;background-size: 100%;}
+.bankIcon313821001016 {background: url(../../static/images/bankIcon/313821001016.png) no-repeat center;background-size: 100%;}
+.bankIcon315456000105 {background: url(../../static/images/bankIcon/315456000105.png) no-repeat center;background-size: 100%;}
+.bankIcon316331000018 {background: url(../../static/images/bankIcon/316331000018.png) no-repeat center;background-size: 100%;}
+.bankIcon318110000014 {background: url(../../static/images/bankIcon/318110000014.png) no-repeat center;background-size: 100%;}
+.bankIcon319361000013 {background: url(../../static/images/bankIcon/319361000013.png) no-repeat center;background-size: 100%;}
+.bankIcon322290000011 {background: url(../../static/images/bankIcon/322290000011.png) no-repeat center;background-size: 100%;}
+.bankIcon323331000001 {background: url(../../static/images/bankIcon/323331000001.png) no-repeat center;background-size: 100%;}
+.bankIcon323584000888 {background: url(../../static/images/bankIcon/323584000888.png) no-repeat center;background-size: 100%;}
+.bankIcon325290000012 {background: url(../../static/images/bankIcon/325290000012.png) no-repeat center;background-size: 100%;}
+.bankIcon402551080008 {background: url(../../static/images/bankIcon/402551080008.png) no-repeat center;background-size: 100%;}
+.bankIcon403100000004 {background: url(../../static/images/bankIcon/403100000004.png) no-repeat center;background-size: 100%;}
+.bankIcon781393010011 {background: url(../../static/images/bankIcon/781393010011.png) no-repeat center;background-size: 100%;}
+
+.btnBoxBulr{
+  font-size: 12px;
+  width:100%;
+  padding: 0 10px !important;
+  line-height: 26px;
+  border-radius: 3px;
+  background: #ffffff !important;
+  text-align: center;
+  color: #1ca4fc!important;
+  border: 1px solid #1ca4fc!important;
+}
+/* 身份验证 start  */
+.item_border{
+  width: 95%;
+  margin-left:5%;
+  border-top: 1px solid #efefef;
+  /*height: 1px;  */
+}
+.hint_border{
+  width: 100%;
+  border-top: 1px solid #efefef;
+}
+.btn_primary{
+  color:#ffffff !important;
+  background:#1ca4fc !important;
+}
+/*.btn_primary:visited {
+ background:#D6D6D6 !important;
+ color: #A2A2A2 !important;
+}*/
+
+.btn_primary:hover  {
+ background:#D6D6D6 !important;
+ color: #A2A2A2 !important; 
+}
+
+.div_primary{
+  margin: 18px 15px 0px 15px;
+}
+
+.item_group @{deep} .group_border .weui-cells::before{
+  border-top: 1px solid #ffffff;
+}
+.item_group @{deep} .group_border .weui-cells::after{
+  border-bottom: 1px solid #ffffff;
+}
+.item_group @{deep} .item_gutter .weui-cells::before{
+  border-top: 1px solid #ffffff;
+}
+.item_group @{deep} .item_gutter .weui-cells::after{
+  border-bottom: 1px solid #ffffff;
+}
+.content @{deep} .weui-cells  {
+  font-size: 15px !important;
+}
+.hint_div{
+  margin-top:11px;
+  margin-bottom: 7px;
+}
+.hint_i{
+  width: 17px !important;
+  height: 17px;
+  background-image: url(../../../static/images/hint.png);
+  background-repeat:no-repeat;
+  display: inline-block;
+
+}
+.hint_span{
+  margin-left:3px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.text_align{
+  margin-top: 5px;
+    line-height: 23px;
+    text-align: left;
+    width: 87%;
+    margin-left: 21px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.hint_div_div{
+  
+    height: 44px;
+    text-align: center !important;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+.hint_a{
+  color: red;
+    
+}
+.hint_no{
+  color:#999999;
+}
+
+/* 身份认证 end */
+/* 银行卡验证 start */
+.text_align_center{
+  font-family:PingFangSC-Regular;
+  font-size:14px;
+  color:#666666;
+  letter-spacing:0;
+  text-align:center;
+  margin-top: 14px;
+  margin-bottom:14px;
+
+}
+.bank-arrow{
+  width: 10px;height: 10px;border-top: 1px solid #999;border-right: 1px solid #999;transform: rotate(45deg);position: absolute;right: 0.4rem;top: 1.2em;
+}
+.head_code_border{
+   width: 96%;
+  margin-left:4%;
+ border-bottom: 1px solid #efefef;
+}

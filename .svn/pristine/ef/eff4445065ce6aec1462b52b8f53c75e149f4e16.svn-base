@@ -1,0 +1,94 @@
+<template>
+	<flexbox >
+	<flexbox-item class="container">
+
+	 
+			<div class="success-img"></div>
+			<span>开户成功</span>
+	 	
+					<!-- btn start -->
+			<flexbox class="box_margin_button" orient="vertical">
+				<flexbox-item>
+					<div class="div_primary">
+				 		<x-button type="primary" class="btn_primary" >去充值</x-button>
+				 	</div>
+				</flexbox-item>
+				<!-- <flexbox-item>
+					<div class="div_primary">
+				 		<x-button   type="primary" plain class="btn_nl" >关闭</x-button>
+				 	</div>
+				</flexbox-item> -->
+			</flexbox>
+			<!-- btn end -->
+		
+
+	</flexbox-item>
+
+
+	</flexbox>
+</template>
+
+<script>
+
+export default {
+	data(){
+		return{
+			msg:'',
+			onFetching: false,
+			bottomCount: 5,
+		}
+	},
+	mounted(){
+		this.msg = this.$route.query.msg;
+	},
+	methods:{
+		/*onScrollBottom () {
+	      if (this.onFetching) {
+	        // do nothing
+	        console.log('nothing')
+	      } else {
+	        this.onFetching = true
+	        setTimeout(() => {
+	          this.bottomCount += 10
+	          this.$nextTick(() => {
+	            this.$refs.scrollerBottom.reset()
+	          })
+	          this.onFetching = false
+	        }, 2000)
+	      }
+	    }*/
+	}
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.container {
+	width: 100%;
+	min-height: 100vh;
+	background: #fff;
+	padding-top: 2rem;
+	text-align: center;
+}
+.success-img {
+	width: 2.96rem;
+	height: 1.48rem;
+	background: url(../../../static/images/success.png) no-repeat;
+	background-size: cover;
+	margin: 0 auto 0.5rem;}
+
+.container span {
+	font-size:18px;
+	color:#333333;
+	text-align:center;
+	letter-spacing: 3px;
+
+}
+.box_margin_button{
+	margin-top:1.0rem;
+}
+.btn_nl{
+	color:#1ca4fc !important;
+	border-color: #1ca4fc !important;
+}
+</style>

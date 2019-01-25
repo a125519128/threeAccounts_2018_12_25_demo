@@ -1,0 +1,169 @@
+<!--  交易记录详情 -->
+<template>
+  <flexbox>
+		<flexbox-item class="container">
+			<!-- head start -->
+ 			<div class="header-info">
+		  		<div class="success-img"></div>
+				<span class="success-span">交易成功</span>
+		  	</div>
+
+			<group  gutter="0em" label-width="5.5em" label-align="left" class="item_gutter">
+				<cell title="交易金额" class="text-align-left">
+					<div>
+						<span style="color:#ff8208;">{{IdNumber}}</span>
+					</div>
+				</cell>
+				<cell title="交易金额"  class="text-align-left">
+					<div>
+						<span>{{IdNumber}}</span>
+					</div>
+				</cell>
+				<div class="item_border" ></div>	
+				<div class="atom-info">
+					<div class="atom-info-time">
+						<span class="atom-info-time-date">2018-12-21</span>
+						<span class="atom-info-time-time">09:12:48</span>
+					</div>
+					<div class="atom-info-icon"></div>
+					<div class="atom-info-text">
+						<span class="atom-info-text-cs">城市：长沙市新开铺</span>
+						<span class="atom-info-text-cs">线路：116路新开铺</span>
+						<span class="atom-info-text-cs">车牌号：220890新开铺</span>
+						<span class="atom-info-text-cs">开往方向：新开铺新开铺</span>
+						<span class="atom-info-text-cs">票价：2.00元新开铺</span>
+						<span class="atom-info-text-cs">优惠金额：普通卡(0.00)新开铺</span>
+					</div>
+				</div>
+				<cell title="交易日期" class="text-align-left">
+					<div>
+						<span>{{time}}</span>
+					</div>
+				</cell>
+				<cell title="交易卡号" class="text-align-left">
+					<div>
+						<span>{{idcode}}</span>
+					</div>
+				</cell>
+				<cell title="交易流水号" class="text-align-left">
+					<div>
+						<span>{{idNumberInfo}}</span>
+					</div>
+				</cell>
+				<cell title="交易类型" class="text-align-left">
+					<div>
+						<span>{{idType}}</span>
+					</div>
+				</cell>
+				
+			</group>
+		  	
+  		</flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+
+	
+<script>
+
+
+
+export default {
+	data(){
+		return {
+			IdNumber:'+12元',
+			time:'2018-12-21',
+			idcode:'6223 1237 8733 7373 123',
+			idNumberInfo:'R20181221071923614966179',
+			idType:'充值',
+		}
+	},
+	mounted(){
+
+	
+	},
+	methods:{
+		
+	    listInfo(index){
+	    	console.log(index);
+	    }
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+/* head start  */
+.container {
+	width: 100%;
+	min-height: 100vh;
+	background: #fff;
+/*	padding-top: 2rem;*/
+	text-align: center;
+}
+.header-info {
+	background: #fff;
+	width: 100%;
+	height: 5.2rem;
+	border-bottom: 0.02rem solid #d8d8d8;
+	padding-top: 2rem;
+}
+.success-img {
+	width: 2.96rem;
+	height: 1.48rem;
+	background: url(../../../static/images/success.png) no-repeat;
+	background-size: cover;
+	margin: 0 auto 0.5rem;}
+.success-span{
+	font-size: 18px;
+}	
+
+.atom-info{
+	/*border-top:1px solid #d8d8d8;*/
+	/*border:1px solid;*/
+	display: flex;
+	flex-direction:row;
+	padding: 9px 9px 9px 16px;
+
+
+}
+.atom-info-time{
+
+	font-size:14px;
+	color:#666666;
+	letter-spacing:0;
+	text-align:center;
+	/*border:1px solid red;*/
+	/*    width: 1.86rem;
+	    margin-left:-0.1rem;*/
+
+}
+.atom-info-time-time{
+	display: block;
+}
+.atom-info-time-date{
+	display: block;
+}
+.atom-info-icon{
+	width: 0.32rem;
+	height: 0.42rem;
+	background: url(../../../static/images/shangche.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+   margin-left: 0.2rem;
+   margin-right: 0.2rem;
+/*  border:1px solid red;
+*/
+  
+}
+.atom-info-text-cs{
+	display: block;
+	/*border:1px solid green;*/
+	text-align: left;
+	color:#666666;
+
+}
+.text-align-left{
+	text-align: left
+}
+/* 支付金额详情 end */
+</style>

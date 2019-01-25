@@ -1,0 +1,168 @@
+<!--  身份证验证 -->
+<template>
+	<flexbox>
+		<flexbox-item class="content">
+			
+			<div class="item_group">
+			  <group  label-width="4em" label-margin-right="1.5em" label-align="justify" 
+						 gutter="0em" class="group_border">
+					<x-input title="姓名"   v-model="CustName" placeholder="请输入姓名" placeholder-align="left" >
+				</x-input>
+			  </group> 
+			</div>
+			<flexbox>
+				<flexbox-item>
+			 		<div class="item_border"></div>	
+			 	</flexbox-item>
+			</flexbox>
+			<div class="item_group">
+				<group gutter="0em" label-width="5.5em" label-margin-right="0.1em" >
+
+
+					<x-input title="身份证号" v-model="IdNumber" placeholder="请扫描或输入身份证号" >
+					</x-input>
+
+					<x-input title="手机号" v-model="Mobile" placeholder="请输入手机号" >
+					</x-input>
+
+					<x-input title="验证码" class="weui-vcode" placeholder="请输入验证码">
+					
+						<x-button slot="right"   class="btnBoxBulr" mini >获取验证码</x-button>
+					</x-input>
+				</group>
+			</div> 
+			
+			<flexbox>
+				<flexbox-item>
+					<div class="div_primary">
+				 	<x-button type="primary" class="btn_primary" >下一步</x-button>
+				 </div>
+				</flexbox-item>
+			</flexbox>
+				   <!-- 弹窗1 start -->
+			 <div v-transfer-dom v-if="hint_success">	  
+				 <x-dialog v-model="showToast" >
+
+				 	<div style="width:100%;">
+				        <div class="hint_div">
+				          <i class="hint_i"></i>
+				          <span class="hint_span">温馨提示</span>
+				        </div>
+						
+				        <div class="hint_border"></div>	
+							
+						 <div class="text_align">
+							<span style="color:#666666">您在长沙银行</span>
+							<span style="color:red;">已预留手机号码为139****
+							8989，请使用该手机号码申请Ⅲ类账户</span>
+							<span style="color:#666666">，如该手机号收不到验证码，可在长沙银行网点或网络渠道申请变更预留手机号码。
+							</span>
+						</div> 
+						
+						 <div class="hint_border"></div>	
+
+				        <div  class="hint_div_div">
+				          <a class="hint_a" href="javascript:void(0)" @click="showToast=false">我知道了</a>		
+				        </div>
+			        </div>
+			      </x-dialog>   
+		     </div>    
+		     <!-- 弹窗1 end -->
+		     <!-- 弹窗2 start -->
+				
+		     <div v-transfer-dom v-if="hint_config">	  
+				 <x-dialog v-model="showToast" >
+
+				 	<div style="width:100%;">
+				        <div class="hint_div">
+				          <i class="hint_i"></i>
+				          <span class="hint_span">温馨提示</span>
+				        </div>
+						
+				        <div class="hint_border"></div>	
+							
+						 <div class="text_align">
+							<span style="color:#666666">
+								您已开立尾号为1234的电子交通卡电子账户，是否需要为该账户开通三亚公交乘车服务？
+							</span>
+						</div> 
+						
+						 <div class="hint_border"></div>	
+
+				        <flexbox :gutter="0" class="hint_div_div">
+								<flexbox-item>
+									 <a class="hint_no" href="javascript:void(0)" @click="showToast=false">不使用</a>
+								</flexbox-item>
+								
+								<flexbox-item style="border-left: 1px solid #d8d8d8;">
+
+									<a class="hint_a" href="javascript:void(0)" @click="showToast=false">使用</a>
+								</flexbox-item>
+
+						</flexbox>
+			        </div>
+			      </x-dialog>   
+		     </div> 
+			<!-- 弹窗2 end -->
+
+		</flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+	
+<script>
+
+
+export default {
+	data(){
+		return {
+			CustName:'',
+			IdNumber:'',
+			Mobile:'',
+			showToast: true,
+			hint_success:false,
+			hint_config:false,
+		}
+	},
+	mounted(){
+
+		// var style = document.creatElement('style');
+		// document.head.appendChild(style);
+		// sheet = style.sheet;
+		// sheet.addRule('.weui-cells::after{','border-bottom: 1px solid #ffffff');
+		// sheet.insertRule('.weui-cells::after{border-bottom: 1px solid #ffffff;}',0);
+		// setTimeout(()=>{
+			// $(".group_border .weui-cells").attr('data-attr','green');
+
+			// $(".group_border .weui-cells").addClass("newVox");
+			var star = '<style>.weui-cells::before{border-top: 1px solid #ffffff;}</style>';
+			// $(".group_border .weui-cells").append(star);
+			// $(".group_border ").children("div:first").append(star);
+			 var star2 = '<style>.weui-cells::after{border-bottom: 1px solid #ffffff;}</style>';
+			 // $(".group_border .weui-cells").append(star2);
+			 // $(".group_border ").children("div:first").append(star2);
+
+		// },10)
+		// 封装组件、工具、api的使用
+		// this.showToast('测试')
+		// this.showLoading()
+		// setTimeout(()=>{
+		// 	this.hideLoading()
+		// 	this.showAlert('温馨提示','文本内容文本内容','按钮文字')
+		// 	this.showConfirm('温馨提示','文本内容文本内容-------','确定按钮','取消按钮')
+		// },1000)
+		// console.log(this.$strUtil.isChine('是否中文'))
+		// post请求方式
+  //   	this.$post('ns/accountopen/var1/checkUserInfo.do', {},(data)=>{
+
+		// },(err)=>{
+
+			
+		// });
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+
+</style>

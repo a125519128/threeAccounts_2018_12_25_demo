@@ -1,0 +1,183 @@
+<template>
+	<flexbox>
+		<flexbox-item >
+			<div class="head">
+				<div class="head_center">
+					<span >长沙银行 III类户</span>
+				</div>
+				<div class="head_body">
+					<i class="head_body_icon"></i>
+					<span class="head_body_span">6214 6769 1278 5678 6658</span>
+					<i class="head_body_copy"></i>
+				</div>
+
+				<div class="head_code_border"></div>
+
+				<div class="head_footer">
+					<div class="head_footer_center">余额：<span style="color:red">2000.00元</span></div>
+				</div>
+			</div>
+			
+			
+			<group>
+		  		<cell-box is-link @click.native="">
+			        <i class="icon-jiaoyijilu"></i>
+			        <span class="content-title">交易记录</span>
+			    </cell-box>
+			    <cell-box @click.native="" is-link>
+			        <i class="icon-xiugaimima"></i>
+			        <span class="content-title">修改交易密码</span>
+			    </cell-box>
+			    <cell-box @click.native="" is-link>
+			        <i class="icon-ccgl"></i>
+			        <span class="content-title">I类账户绑定/查询</span>
+			    </cell-box>
+			    <cell-box link="/quota-query" is-link>
+			        <i class="icon-yinhangxianecha"></i>
+			        <span class="content-title">限额查询</span>
+			    </cell-box>
+			</group>
+				   
+			  
+				
+		</flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+	
+<script>
+
+
+export default {
+	data(){
+		return {
+		
+		}
+	},
+	mounted(){
+
+		
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+.head{
+	background: #ffffff !important;
+    border-radius: 4px;
+    width: 90%;
+    height: 3.3rem;
+    margin: 0.22rem auto 0px auto;
+    border:1px solid #efefef;
+
+}
+.head_center{
+	height: 0.92rem !important;
+    background: #1ca4fc;
+    border-radius: 4px 4px 0 0;
+    font-size: 0.32rem;
+    color: #fff;
+    letter-spacing: 1px;
+    align-items: center;
+    display: flex;
+    margin-left: 0%;
+	
+
+}
+.head_center span{
+	margin-left:0.4rem;
+}
+.head_body{
+	height: 1.38rem
+}
+.head_footer{
+	/*height: 10%;*/
+	font-size: 16px;
+}
+.head_footer_center{
+	letter-spacing: 1px;
+	width: 80%;
+	height: 0.9rem;
+	align-items: center;
+    display: flex;
+	padding: 0.24rem;
+
+
+}
+.head_remaining_sum{
+	/*background:#2193f8;*/
+	border-radius:4px 4px 0 0;
+	text-align:left;
+	width: 100%;
+	height:40px;
+}
+.head_body_icon{
+	width: 0.76rem;
+	height: 100%;
+	background: url(../../../static/images/icon.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+    margin-left: 10px;
+    float: left;
+}
+.head_body_span{
+	 font-size: 15px;
+    color: #666666;
+    text-align: left;
+ 
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+.head_body_copy{
+	width: 0.38rem;
+	 height: 100%;
+	background: url(../../../static/images/fz.png) no-repeat center center;
+	
+    background-size: 100%;
+    display: inline-block;
+    float: right;
+    align-items: center;
+    display: inline-block;
+    display: flex;
+ 
+    margin-right: 4%;
+
+
+}
+
+
+.content-title {font-size: 0.26rem;color:#666;margin-left: 0.1rem;}
+
+.icon-jiaoyijilu{
+	width: 0.28rem;
+    height: 0.28rem;
+	background: url(../../../static/images/jyjl.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+  
+}
+.icon-ccgl{
+	  width: 0.28rem;
+    height: 0.28rem;
+	background: url(../../../static/images/zhbd.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+}
+.icon-xiugaimima{
+	 width: 0.28rem;
+    height: 0.28rem;
+	background: url(../../../static/images/xgmm.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+}
+.icon-yinhangxianecha{
+	width: 0.28rem;
+    height: 0.28rem;
+	background: url(../../../static/images/chaxun.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+}
+</style>

@@ -1,0 +1,79 @@
+<template>
+	<flexbox orient='vertical'>
+		<div class="title">请设置您的电子交通卡密码</div>
+		<div class="password-box">
+			<password ref="password" @click="isPassword"></password>
+		</div>
+		<div class="user-agreement">
+	    	<check-icon :value.sync="checkIcon" class="fl" data-attr="red"></check-icon>
+	    	<div class="user-agreement-text fr">
+	    		我已阅读并同意<span class="span-color" @click="agreementModel = true">《长沙银行电子账户服务协议》</span>，和<span class="span-color" @click="policyModel = true">《长沙银行股份有限公司隐私政策》</span>，并声明为中国纳税人。
+	    	</div>
+	    	<!-- 协议内容 -->
+	    	<div v-transfer-dom>
+		      <x-dialog v-model="agreementModel">
+		      	<div class="vux-content" v-html="agreementContent"></div>
+		        <span class="vux-close" @click="agreementModel = false"><icon type="cancel"></icon></span>
+		      </x-dialog>
+		    </div>
+		    <!-- 政策内容 -->
+		    <div v-transfer-dom>
+		      <x-dialog v-model="policyModel">
+		      	<div class="vux-content" v-html="policyContent"></div>
+		        <span class="vux-close" @click="policyModel = false"><icon type="cancel"></icon></span>
+		      </x-dialog>
+		    </div>
+		</div>
+		<x-button type="primary" :disabled="footerBt" class="footer-bt" @click.native="submitPassword">提交</x-button>
+	</flexbox>
+</template>
+
+<script>
+import password from '_c/password.vue'
+import agreementContent from '@/assets/agreement-content'
+import policyContent from '@/assets/policy-content'
+
+export default {
+	components:{
+		password,
+		agreementContent,
+		policyContent
+	},
+	data(){
+		return{
+			checkIcon: false, 
+			agreementModel: false, //协议
+			policyModel: false, //政策
+			agreementContent:'', //协议内容
+			policyContent:'', //政策内容
+			footerBt:false, //是否禁止提交按钮
+		}
+	},
+	mounted(){
+		this.agreementContent = agreementContent
+		this.policyContent = policyContent
+	},
+	methods:{
+		isPassword(){
+			console.log('isPassword')
+		},
+		submitPassword(){
+
+		}
+	}
+}
+</script>
+
+<style scoped>
+.title{height: 1.72rem;line-height: 2.2rem; font-size: 0.3rem;color: #666;}
+.password-box{width: 90%;height: 1rem; position: relative;}
+.user-agreement{width: 93%; margin-top: 0.3rem;}
+.user-agreement-text{width: 89%;}
+.span-color {color:#7390ff;}
+.vux-content {padding: 0.4rem;max-height: 8rem;line-height: 0.4rem; overflow: scroll;text-align: left;font-size: 0.3rem;}
+.vux-close {position: absolute;top: 0;right: 0;}
+.footer-bt{width: 90%;margin-top: 0.4rem;}
+/* 修改x-button type='primary' */
+.weui-btn_disabled.weui-btn_primary, .weui-btn_primary{background-color: #1ca4fc;}
+.weui-btn_primary:not(.weui-btn_disabled):active{color: rgba(255, 255, 255, 0.6);background: rgba(28,164,255,0.6);}
+</style>

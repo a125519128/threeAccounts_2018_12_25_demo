@@ -1,0 +1,61 @@
+<template>
+	<div class="container">
+		<input ref="pwd" type="tel" maxlength="6" id="password0" name="password0" class="pwd" unselectable="on" />
+		<ul class="pwd-wrap" @click="focus">
+			<li :class="msg.length == 0?'psd-blink':''"><i v-if="msg.length > 0"></i></li>
+			<li :class="msg.length == 1?'psd-blink':''"><i v-if="msg.length > 1"></i></li>
+			<li :class="msg.length == 2?'psd-blink':''"><i v-if="msg.length > 2"></i></li>
+			<li :class="msg.length == 3?'psd-blink':''"><i v-if="msg.length > 3"></i></li>
+			<li :class="msg.length == 4?'psd-blink':''"><i v-if="msg.length > 4"></i></li>
+			<li :class="msg.length == 5?'psd-blink':''"><i v-if="msg.length > 5"></i></li>
+		</ul>
+		
+	</div>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				msg: '',
+				timer:'',
+			}
+		},
+		methods: {
+			focus() {
+				console.log('focus')
+				this.$refs.pwd.focus();
+				this.timer = setInterval(()=>{
+					/*if (numberKeyboard != null) {
+						if (!numberKeyboard.isShowing()) {
+							numberKeyboard.showKeyboard();
+						}
+					}*/
+					this.msg = $('#password0').val();
+					console.log("this.msg="+this.msg+";length="+this.msg.length);
+					if(this.msg.length == 6){
+						clearInterval(this.timer);
+						// 调用父组件的方法并传参
+						this.$emit('click',this.msg);
+					}
+				},200)
+			},
+			unfocus() {
+				clearInterval(this.timer);
+			}
+		},
+		mounted(){
+			// 通过$once来监听定时器，在beforeDestroy钩子可以被清除。
+			this.$once('hook:beforeDestroy', () => {            
+			    clearInterval(this.timer);                                    
+			})
+		}
+	}
+</script>
+<style scoped>
+.pwd {width: 0.1px;height: 0.1px;color: transparent;position: relative;background: #000;border: none;opacity: 0;z-index: -1;}
+.psd-blink {display: inline-block;background: url("../../static/images/blink.gif") no-repeat center;border: 1px solid rgba(82, 168, 236, .8);-webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6);box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);}
+.pwd-wrap {width: 100%;height: 1.0rem;background: #fff;border: 1px solid #dedede;display: flex;display: -webkit-box;display: -webkit-flex;cursor: pointer;position: absolute;left: 0;right: 0;top:0; z-index: 999;}
+.pwd-wrap li {text-align: center;line-height: 1.0rem;-webkit-box-flex: 1;flex: 1;-webkit-flex: 1;border-right: 1px solid #dedede;}
+.pwd-wrap li:last-child {border-right: none;}
+.pwd-wrap li i {width: 0.2rem;height: 0.2rem;border-radius: 50%;background: #000;display: inline-block;}
+</style>

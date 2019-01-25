@@ -1,0 +1,92 @@
+<!--  交易记录 -->
+<template>
+  <flexbox>
+		<flexbox-item >
+ 			<div class="header-info">
+		  		<i class="head_icon "></i>	
+		  		
+		  		<div class="head_info_context">
+			  		<span class="head_context  ">
+			  			6214461111000000339
+			  			
+			  		</span>
+					<span class="head_context_yue">
+		  			余额：<i class="head_context_red">0.00</i>元
+		  			</span> 
+		  		</div>
+		  	</div>
+	    	
+			
+  		</flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+
+	
+<script>
+
+
+export default {
+	data(){
+		return {
+			show: false
+		}
+	},
+	mounted(){
+
+	
+	},
+	methods:{
+		tijiao(){
+			
+			this.show = true;
+		}
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+.header-info {
+	width: 100%;
+	height: 1.2rem;
+	border-bottom: 0.02rem solid #d8d8d8;
+}
+
+.head_icon{
+	width: 0.76rem;
+	height: 100%;
+	background: url(../../../static/images/icon.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+    margin-left: 10px;
+  /*  border:1px solid red;*/
+    float: left;
+  
+}
+.head_info_context{
+	    float: left;
+ /*  border: 1px solid;*/
+    height: 100%;
+    margin-left: 0.3rem;
+}
+.head_context{
+	
+    /*   border: 1px solid;*/
+    line-height: 0.4rem;
+    font-size: 14px;
+        float: left;
+        margin-top: 0.2rem;
+	
+}
+.head_context_yue{
+/*	border: 1px solid red;*/
+  	
+   display: block;
+
+}
+.head_context_red{
+	color:red;
+	margin-left:0.1rem;
+
+}
+</style>

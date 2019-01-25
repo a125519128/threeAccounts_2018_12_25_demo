@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* 全局样式初始化 */
+*{box-sizing: border-box;}
+html,.container {width: 100%;height: 100%;}
+html,body,a,button,input,optgroup,select,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+*,body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input,.container{margin:0;padding: 0;}
+body {width:100%;min-height:100%;font: 12px/1.8em -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;color:#333;overflow-x: hidden;-webkit-overflow-scrolling: touch;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;background: #f8f8f8;}
+ul,ol,li{list-style:none;}
+img{border:none;}
+i{font-style:normal;}
+a{text-decoration:none;}
+a,img {-webkit-touch-callout:none;}
+input,textarea {outline: none;border:0;}
+input {-webkit-appearance: none;line-height: 100% !important;}
+input{font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;outline:none;}
+/* 改变 input 的颜色*/
+/*input::-webkit-input-placeholder{color:#999;}
+input:focus::-webkit-input-placeholder{color:#666;}*/
+/* 图标字体 */
+/* 图标字体 */
+@font-face {font-family: "iconfont";
+  src: url('./fonts/iconfont.eot?t=1528946032151'); /* IE9*/
+  src: url('./fonts/iconfont.eot?t=1528946032151#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('./fonts/iconfont.ttf?t=1528946032151') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./fonts/iconfont.svg?t=1528946032151#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 复制 */
+.icon-fuzhi:before { content: "\e629"; }
+/* 交易记录 */
+.icon-jiaoyijilu-copy-copy:before { content: "\e656"; }
+/* 修改密码 */
+.icon-xiugaimima1:before { content: "\e666"; }
+/* 绑定 */
+.icon-ccgl-huoweibangding-3:before { content: "\e600"; }
+/* 钱包 */
+.icon-qianbao:before { content: "\e661"; }
+/* 暂无记录 */
+.icon-zanwujilu1:before { content: "\e627"; }
+/* 限额查询 */
+.icon-yinhangxianechaxun:before { content: "\e632"; }
+/* 隐藏 */
+.icon-yincang:before { content: "\e700"; }
+/* 显示 */
+.icon-xianshi:before { content: "\e609"; }
+/* 公用style */
+.fl{float: left;}
+.fr{float: right;}
+.clear{clear:both;}
+.clear:after{clear:both;display:table;content:'';}
+
+.bank-icon {background: url(../../static/images/bankIcon/123456.png) no-repeat center;background-size: 100%;}
+.bankIcon102100099996 {background: url(../../static/images/bankIcon/102100099996.png) no-repeat center;background-size: 100%;}
+.bankIcon103100000026 {background: url(../../static/images/bankIcon/103100000026.png) no-repeat center;background-size: 100%;}
+.bankIcon104100000004 {background: url(../../static/images/bankIcon/104100000004.png) no-repeat center;background-size: 100%;}
+.bankIcon105100000017 {background: url(../../static/images/bankIcon/105100000017.png) no-repeat center;background-size: 100%;}
+.bankIcon301290000007 {background: url(../../static/images/bankIcon/301290000007.png) no-repeat center;background-size: 100%;}
+.bankIcon302100011000 {background: url(../../static/images/bankIcon/302100011000.png) no-repeat center;background-size: 100%;}
+.bankIcon303100000006 {background: url(../../static/images/bankIcon/303100000006.png) no-repeat center;background-size: 100%;}
+.bankIcon304100040000 {background: url(../../static/images/bankIcon/304100040000.png) no-repeat center;background-size: 100%;}
+.bankIcon305100000006 {background: url(../../static/images/bankIcon/305100000006.png) no-repeat center;background-size: 100%;}
+.bankIcon305100000013 {background: url(../../static/images/bankIcon/305100000013.png) no-repeat center;background-size: 100%;}
+.bankIcon306581000003 {background: url(../../static/images/bankIcon/306581000003.png) no-repeat center;background-size: 100%;}
+.bankIcon307584007998 {background: url(../../static/images/bankIcon/307584007998.png) no-repeat center;background-size: 100%;}
+.bankIcon308584000013 {background: url(../../static/images/bankIcon/308584000013.png) no-repeat center;background-size: 100%;}
+.bankIcon309391000011 {background: url(../../static/images/bankIcon/309391000011.png) no-repeat center;background-size: 100%;}
+.bankIcon310290000013 {background: url(../../static/images/bankIcon/310290000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313100000013 {background: url(../../static/images/bankIcon/313100000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313110000017 {background: url(../../static/images/bankIcon/313110000017.png) no-repeat center;background-size: 100%;}
+.bankIcon313121006888 {background: url(../../static/images/bankIcon/313121006888.png) no-repeat center;background-size: 100%;}
+.bankIcon313191000011 {background: url(../../static/images/bankIcon/313191000011.png) no-repeat center;background-size: 100%;}
+.bankIcon313192000013 {background: url(../../static/images/bankIcon/313192000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313241066661 {background: url(../../static/images/bankIcon/313241066661.png) no-repeat center;background-size: 100%;}
+.bankIcon313261000018 {background: url(../../static/images/bankIcon/313261000018.png) no-repeat center;background-size: 100%;}
+.bankIcon313301008887 {background: url(../../static/images/bankIcon/313301008887.png) no-repeat center;background-size: 100%;}
+.bankIcon313301099999 {background: url(../../static/images/bankIcon/313301099999.png) no-repeat center;background-size: 100%;}
+.bankIcon313305066661 {background: url(../../static/images/bankIcon/313305066661.png) no-repeat center;background-size: 100%;}
+.bankIcon313331000014 {background: url(../../static/images/bankIcon/313331000014.png) no-repeat center;background-size: 100%;}
+.bankIcon313332082914 {background: url(../../static/images/bankIcon/313332082914.png) no-repeat center;background-size: 100%;}
+.bankIcon313393080005 {background: url(../../static/images/bankIcon/313393080005.png) no-repeat center;background-size: 100%;}
+.bankIcon313421087506 {background: url(../../static/images/bankIcon/313421087506.png) no-repeat center;background-size: 100%;}
+.bankIcon313424076706 {background: url(../../static/images/bankIcon/313424076706.png) no-repeat center;background-size: 100%;}
+.bankIcon313521000011 {background: url(../../static/images/bankIcon/313521000011.png) no-repeat center;background-size: 100%;}
+.bankIcon313521006000 {background: url(../../static/images/bankIcon/313521006000.png) no-repeat center;background-size: 100%;}
+.bankIcon313551070008 {background: url(../../static/images/bankIcon/313551070008.png) no-repeat center;background-size: 100%;}
+.bankIcon313551088886 {background: url(../../static/images/bankIcon/313551088886.png) no-repeat center;background-size: 100%;}
+.bankIcon313581003284 {background: url(../../static/images/bankIcon/313581003284.png) no-repeat center;background-size: 100%;}
+.bankIcon313591001001 {background: url(../../static/images/bankIcon/313591001001.png) no-repeat center;background-size: 100%;}
+.bankIcon313602088017 {background: url(../../static/images/bankIcon/313602088017.png) no-repeat center;background-size: 100%;}
+.bankIcon313651099999 {background: url(../../static/images/bankIcon/313651099999.png) no-repeat center;background-size: 100%;}
+.bankIcon313653000013 {background: url(../../static/images/bankIcon/313653000013.png) no-repeat center;background-size: 100%;}
+.bankIcon313701098010 {background: url(../../static/images/bankIcon/313701098010.png) no-repeat center;background-size: 100%;}
+.bankIcon313821001016 {background: url(../../static/images/bankIcon/313821001016.png) no-repeat center;background-size: 100%;}
+.bankIcon315456000105 {background: url(../../static/images/bankIcon/315456000105.png) no-repeat center;background-size: 100%;}
+.bankIcon316331000018 {background: url(../../static/images/bankIcon/316331000018.png) no-repeat center;background-size: 100%;}
+.bankIcon318110000014 {background: url(../../static/images/bankIcon/318110000014.png) no-repeat center;background-size: 100%;}
+.bankIcon319361000013 {background: url(../../static/images/bankIcon/319361000013.png) no-repeat center;background-size: 100%;}
+.bankIcon322290000011 {background: url(../../static/images/bankIcon/322290000011.png) no-repeat center;background-size: 100%;}
+.bankIcon323331000001 {background: url(../../static/images/bankIcon/323331000001.png) no-repeat center;background-size: 100%;}
+.bankIcon323584000888 {background: url(../../static/images/bankIcon/323584000888.png) no-repeat center;background-size: 100%;}
+.bankIcon325290000012 {background: url(../../static/images/bankIcon/325290000012.png) no-repeat center;background-size: 100%;}
+.bankIcon402551080008 {background: url(../../static/images/bankIcon/402551080008.png) no-repeat center;background-size: 100%;}
+.bankIcon403100000004 {background: url(../../static/images/bankIcon/403100000004.png) no-repeat center;background-size: 100%;}
+.bankIcon781393010011 {background: url(../../static/images/bankIcon/781393010011.png) no-repeat center;background-size: 100%;}
+
+.btnBoxBulr{
+  font-size: 12px;
+  width:100%;
+  padding: 0 10px !important;
+  line-height: 26px;
+  border-radius: 3px;
+  background: #ffffff !important;
+  text-align: center;
+  color: #1ca4fc!important;
+  border: 1px solid #1ca4fc!important;
+}
+/* 身份验证 start  */
+.item_border{
+  width: 96%;
+  margin-left:4%;
+  border-top: 1px solid #efefef;
+  /*height: 1px;  */
+}
+.hint_border{
+  width: 100%;
+  border-top: 1px solid #efefef;
+}
+.btn_primary{
+  color:#ffffff !important;
+  background:#1ca4fc !important;
+}
+/*.btn_primary:visited {
+ background:#D6D6D6 !important;
+ color: #A2A2A2 !important;
+}*/
+
+.btn_primary:hover  {
+ background:#D6D6D6 !important;
+ color: #A2A2A2 !important; 
+}
+
+.div_primary{
+  margin: 18px 15px 0px 15px;
+}
+
+.item_group /deep/ .group_border .weui-cells::before{
+  border-top: 1px solid #ffffff;
+}
+.item_group /deep/ .group_border .weui-cells::after{
+  border-bottom: 1px solid #ffffff;
+}
+.item_group /deep/ .weui-cells::before{
+  border-top: 1px solid #ffffff;
+}
+.item_group /deep/ .weui-cells::after{
+  border-bottom: 1px solid #ffffff;
+}
+.content /deep/ .weui-cells  {
+  font-size: 15px;
+}
+.hint_div{
+  margin-top:11px;
+  margin-bottom: 7px;
+}
+.hint_i{
+  width: 17px !important;
+  height: 17px;
+  background-image: url(../../../static/images/hint.png);
+  background-repeat:no-repeat;
+  display: inline-block;
+
+}
+.hint_span{
+  margin-left:3px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.text_align{
+  margin-top: 5px;
+    line-height: 23px;
+    text-align: left;
+    width: 87%;
+    margin-left: 21px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.hint_div_div{
+  
+    height: 44px;
+    text-align: center !important;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+.hint_a{
+  color: red;
+    
+}
+.hint_no{
+  color:#999999;
+}
+
+/* 身份认证 end */
+/* 银行卡验证 start */
+.text_align_center{
+  font-family:PingFangSC-Regular;
+  font-size:14px;
+  color:#666666;
+  letter-spacing:0;
+  text-align:center;
+  margin-top: 14px;
+  margin-bottom:14px;
+
+}
+.bank-arrow{
+  width: 10px;height: 10px;border-top: 1px solid #999;border-right: 1px solid #999;transform: rotate(45deg);position: absolute;right: 0.4rem;top: 1.2em;
+}
+.head_code_border{
+   width: 96%;
+  margin-left:4%;
+ border-bottom: 1px solid #efefef;
+}

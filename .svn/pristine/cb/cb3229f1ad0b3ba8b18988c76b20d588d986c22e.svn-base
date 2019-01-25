@@ -1,0 +1,175 @@
+<template>
+	<flexbox>
+		<flexbox-item >
+			<!-- <flexbox class="head" orient="vertical" :gutter="0">
+				<div class="head_type" >
+					<flexbox-item  class="head_type_context">					
+						<span >长沙银行 III类户</span>
+					</flexbox-item>	   
+				</div>
+				  
+				
+			 <flexbox-item class="head_code">
+			 	
+			 	<i class="head_code_icon"></i>
+				<span class="head_code_span">6214 6769 1278 5678 6658</span>
+				<i class="head_code_copy"></i>
+				
+			</flexbox-item>	 
+			
+			<div class="head_remaining_sum" >
+				<div class="head_code_border"></div>
+				<flexbox-item class="head_remaining_sum_context">
+					
+					<div class="">余额：<span style="color:red">2000.00元</span></div>
+				</flexbox-item>	 	   
+			</div>
+				  
+
+			</flexbox> -->
+			<flexbox class="head" orient="vertical" :gutter="0">
+				<div class="head_type" >
+					<flexbox-item  class="head_type_context">					
+						<span >长沙银行 III类户</span>
+					</flexbox-item>	   
+				</div>
+				  
+				
+			 <flexbox-item class="head_code">
+			 	
+			 	<i class="head_code_icon"></i>
+				<span class="head_code_span">6214 6769 1278 5678 6658</span>
+				<i class="head_code_copy"></i>
+				
+			</flexbox-item>	 
+			
+			<div class="head_remaining_sum" >
+				<div class="head_code_border"></div>
+				<flexbox-item class="head_remaining_sum_context">
+					
+					<div class="">余额：<span style="color:red">2000.00元</span></div>
+				</flexbox-item>	 	   
+			</div>
+			</flexbox>
+			
+			
+		
+				   
+			  
+				
+		</flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+	
+<script>
+
+
+export default {
+	data(){
+		return {
+		
+		}
+	},
+	mounted(){
+
+		
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+.head{
+	background: #ffffff !important;
+    border-radius: 4px;
+    width: 90%;
+    height: 3.3rem;
+    margin: 11px auto 0px auto;
+    border:1px solid #efefef;
+}
+.head_type{
+	background:#2193f8;
+	border-radius:4px 4px 0 0;
+	text-align:left;
+	width: 100%;
+	height:0.8rem;
+}
+ .head_type_context{
+	/*border: 1px solid red;*/
+	width: 55% !important;
+	padding-left: 20px;
+	line-height: 38px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: #ffffff;
+	text-align: left;
+	
+}
+.head_code{
+	/*border:1px solid red !important;*/
+	width: 100%;
+	
+		
+}
+
+.head_code_icon{
+/*	border:1px solid red;*/
+	width: 0.76rem;
+	height: 100%;
+	background: url(../../../static/images/icon.png) no-repeat center center;	
+	background-size: 100%;
+    display: inline-block;
+    margin-left: 10px;
+    float: left;
+}
+.head_code .head_code_span{
+
+
+      
+    font-size: 15px;
+    color: #666666;
+    text-align: left;
+ 
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+  
+}
+.head_code_copy{
+	width: 0.38rem;
+	 height: 100%;
+	background: url(../../../static/images/fz.png) no-repeat center center;
+	
+    background-size: 100%;
+    display: inline-block;
+    float: right;
+    align-items: center;
+    display: inline-block;
+    display: flex;
+ 
+    margin-right: 4%
+
+
+}
+.head_remaining_sum{
+	/*background:#2193f8;*/
+	border-radius:4px 4px 0 0;
+	text-align:left;
+	width: 100%;
+	height:40px;
+}
+.head_remaining_sum_context{
+	width: 55% !important;
+	padding-left: 20px;
+	line-height: 38px;
+	letter-spacing: 1px;
+	font-size: 16px;
+	/*color: #ffffff;
+	text-align: left;*/
+}
+.head_code{
+	height: 1.8rem !important;
+}
+</style>

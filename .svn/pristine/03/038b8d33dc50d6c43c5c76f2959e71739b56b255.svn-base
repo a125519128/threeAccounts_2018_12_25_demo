@@ -1,0 +1,56 @@
+<!--  身份证验证 -->
+<template>
+  <flexbox>
+		<flexbox-item class="content">
+ 
+	    	<group gutter="0em" label-width="5.5em" label-margin-right="0.5em" >
+		    	<x-input title="原交易密码" type="password" :max="11" placeholder="请输入原交易密码"></x-input>
+		    	<x-input title="新交易密码" type="password" placeholder="请输入身份证号" :max="18"></x-input>
+		    	<x-input title="确认密码" type="password" placeholder="请输入身份证号" :max="18"></x-input>
+	        </group>
+   
+			<!-- 表单 end-->
+			<!-- 按钮 start -->
+			<flexbox>
+				<flexbox-item>
+					<div class="div_primary">
+				 	<x-button type="primary" class="btn_primary" @click.native="tijiao()" >提交</x-button>
+				 </div>
+				</flexbox-item>
+			</flexbox>
+			<!-- 按钮 end -->
+			
+		    <!-- 弹框 start-->		    
+		       <toast v-model="show" text="修改成功" width="3rem"></toast> 
+
+  </flexbox-item>	       	                      	     	          
+	</flexbox>
+</template>
+
+	
+<script>
+
+
+export default {
+	data(){
+		return {
+			show: false
+		}
+	},
+	mounted(){
+
+	
+	},
+	methods:{
+		tijiao(){
+			
+			this.show = true;
+		}
+	}
+}
+</script>
+
+<!-- scoped只在当前页面生效 font-size: 0.24rem; -->
+<style scoped>
+/*.info-list {width: 100%;height: auto;background: #fff;}*/
+</style>
