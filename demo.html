@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成二维码</title>
+<script type=text/javascript src="resources/jquery/1.10.2/jquery.min.js"></script>
+<script type=text/javascript src="pageRc/static/js/qrcode.js"></script>
+</head>
+<body>
+
+<div style="width: 85%;margin-left: 7%;margin-top:5%;">
+<li><span>开户渠道:</span><input id="channelId" value="TwoThings"/></li>
+<li><span>姓名：</span><input id="userName"/></li>
+<li><span>手机号：</span><input id="mobileNo"/></li>
+<li><span>身份证号：</span><input id="idNo"/></li>
+<li><span>银行卡号：</span><input id="cardNo"/></li>
+<li><span>合作渠道：</span><input id="extData" value="CSBS"/></li>
+<li><span>页面跳转：</span><input id="pageMark"/></li>
+<button onclick="getcode()">生成二维码</button>
+</div>
+
+<div id="qrcode" style="margin-left: 7%;margin-top:5%;margin-bottom: 5%;"></div>
+
+<span id="qrcode1" style="margin-left: 7%;margin-top:5%;margin-bottom: 5%;"></span>
+
+<script type="text/javascript">
+
+	function getcode(){
+		var channelId = $("#channelId").val();
+		var userName = $("#userName").val();
+		var mobileNo = $("#mobileNo").val();
+		var idNo = $("#idNo").val();
+		var cardNo = $("#cardNo").val();
+		var extData = $("#extData").val();
+		var pageMark = $("#pageMark").val();
+		var callBack = 'http://112.74.161.62:18080/testpay/bcs_opac_notify';
+		var jumpUrl = 'http://112.74.161.62:18080/testpay/bcs_opac_synchro_notify';
+		var sequence = '654321';
+		var json = {
+			channelId:channelId,
+			userName:userName,
+			mobileNo:mobileNo,
+			idNo:idNo,
+			cardNo:cardNo,
+			extData:extData,
+			pageMark:pageMark,
+			userId:'123456',
+			sequence:sequence,
+			callBack:callBack,
+			jumpUrl:jumpUrl
+		}
+		$("#qrcode").html("");
+		$("#qrcode1").html("");
+		$.ajax({
+			type:"POST",
+			url:"/openBank/ns/getToken2.do",
+			data:JSON.stringify(json),
+			timeout : 60000,
+			datatype: "text",
+			success:function(data){
+				console.log(data);
+				new QRCode(document.getElementById("qrcode"),{
+		              text:data.url, 
+		              width: 300,
+		              height: 300,
+		              colorDark : "#000000"});
+				document.getElementById("qrcode1").innerText=data.url+"";
+				//alert(data.url);
+				
+				//alert("二维码的有效时间："+data.vtime+"秒");
+			},
+			error: function(data){ //调用出错执行的函数   //请求出错处理
+ 				alert(data);
+				return ;
+			}
+		})
+	}
+	
+</script>
+</body>
+</html>
